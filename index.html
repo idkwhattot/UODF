@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CFR Uploader - Sleek Modern</title>
+  <title>CFR Uploader</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
     /* Reset & base */
@@ -263,9 +263,9 @@
 </head>
 <body>
 
-  <a href="/logout" id="logout" aria-label="Logout">NAPOLJEEEEEE</a>
+  <a href="/logout" id="logout" aria-label="Logout">Logout</a>
 
-  <h1>Brate moj ovo ti je Uploader</h1>
+  <h1>CFR NO LIMITS Uploader</h1>
 
   <div id="dropZone" tabindex="0" role="button" aria-label="Drag and drop files or folders here or click to select files">
     <svg aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" 
@@ -274,25 +274,25 @@
       <polyline points="17 8 12 3 7 8"/>
       <line x1="12" y1="3" x2="12" y2="15"/>
     </svg>
-    ne znam da li ovo radi mozda radi lol
+    Drag files here
   </div>
 
   <form id="uploadForm" enctype="multipart/form-data" novalidate>
     <input type="file" id="fileInput" name="files" multiple webkitdirectory directory style="display:none" aria-hidden="true" />
 
-    <input type="text" id="unlock" name="unlock" placeholder="ak pogodis kod mozes objavis fajl neogranicenom velicinom" autocomplete="off" aria-label="Unlock code for unlimited upload size" />
-    <button id="check" >Pomoli se Bogu da radi :D</button>
+    <input type="text" id="unlock" name="unlock" placeholder="enter code here for unlimited power" autocomplete="off" aria-label="Unlock code for unlimited upload size" />
+    <button id="check" >Check Code</button>
 
-    <div id="sizeDisplay" aria-live="polite" aria-atomic="true">Velicina tvog mucenog fajla: 0 MB</div>
+    <div id="sizeDisplay" aria-live="polite" aria-atomic="true">your current file size: 0 MB</div>
 
     <div class="progress-container" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
       <div class="progress-bar" id="progressBar">0%</div>
     </div>
 
-    <button type="submit" aria-label="Upload selected files">Objavi mislim ono kapiras</button>
+    <button type="submit" aria-label="Upload selected files">Upload</button>
   </form>
 
-  <p>kod je uh ILOVEUPLOADING ne pitaj.</p>
+  <p>Code is ILOVEUPLOADING</p>
 
   <div class="result" aria-live="polite"></div>
 
@@ -335,7 +335,7 @@
       return;
     }
 
-    resultDiv.innerHTML = "<h3>ovo su tvoji objavljeni fajlovi placi</h3>";
+    resultDiv.innerHTML = "<h3>Your Files</h3>";
     uploads.forEach(upload => {
       const folderName = upload.files[0]?.name.split("/")[0] || "Folder";
       const div = document.createElement("div");
@@ -343,8 +343,8 @@
       div.innerHTML = `
         <strong>${folderName}</strong>
         <div class="upload-buttons">
-          <a href="${upload.folderLink}" download aria-label="skini ovaj folder (ovo ti je ime prvog fajla iz foldera) ${folderName}" class="icon-download">Skini Fajl</a>
-          <button onclick="navigator.clipboard.writeText(location.origin + '${upload.folderLink}')" aria-label="Copy download link for ${folderName}" class="icon-copy">Kopiraj Link Za Skidanje</button>
+          <a href="${upload.folderLink}" download aria-label="Download Folder ${folderName}" class="icon-download">Download</a>
+          <button onclick="navigator.clipboard.writeText(location.origin + '${upload.folderLink}')" aria-label="Copy download link for ${folderName}" class="icon-copy">Copy download link</button>
         </div>
       `;
       resultDiv.appendChild(div);
